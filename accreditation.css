@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap');
+
+
+
+
+
+
+
+#accred-feedback{
+	opacity:0;
+	display:none;
+
+}
+
+#correct, #incorrect{
+	font-weight:bold;
+	display:none;
+	padding-top:8px;
+}
+
+#accred-result{
+	border-radius: 50%;
+	height:300px;
+	width:300px;
+margin: auto;
+	border:8px solid #ccc;
+}
+
+#accred-result span{
+	display:block;
+	text-align:center;
+	line-height:300px;
+	font-size:60px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>myCASA</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="initial-scale=1">
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/designsystem.min.css">
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/casa.css">
+      <script type="text/javascript" src="../mycasa-src-3.0/js/designsystem.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.js"></script>
+	  <script type="text/javascript" src="va.js"></script>
+      <script type="text/javascript">
+         /* page specific js */
+
+
+
+      </script>
+      <style type="text/css">
+      </style>
+   </head>
+   <body class="live-demo au-body au-grid">
+      <main class="au-grid">
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="logo au-body au-body--dark">
+                     <a href="index.html"><img src="../mycasa-src/img/CASALOGO-white-i.svg"></a>
+                  </div>
+                  <div class="casa-menu">
+
+                  	<div id="dropdown-menu">
+						<div id="dd-menu"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/menu.png" height="20" />Menu</a></div>
+						<div id="dd-close"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/close.png" height="20" />Close</a><br />
+						<br />
+						<p id="mycasa-home"><a href="#">myCASA home</a></p>
+						<p><a href="#">Switch profile</a></p>
+						<p><a href="mycasa-signed-out.html">Sign out</a></p>
+						</div>
+
+
+                  </div>
+               </div></div>
+            </div>
+         </div>
+         <div class="body">
+			<div class="banner">
+				<div class=container>
+					<div class="row">
+					 <div class="col-md-12">
+				This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+				</div>
+				</div>
+			</div>
+		</div>
+         <div class="container">
+               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="#">myCASA</a></li>
+                     <li>Service name</li>
+                  </ul>
+               </nav>
+			  <div class="casa-section">
+               <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading">Service name</h1>
+                  <a class="au-direction-link" href="javascript:history.back()">
+					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
+					</a>
+               </header>
+			 </div>
+
+        <div class="row">
+               	<div class="col-xs-12 col-md-12 col-lg-6">
+
+                <h3>Service step name</h3>
+                <!-- the step of the process on this page -->
+
+                <!-- content starts here -->
+                <div class="au-callout">
+                  <p>Some information that is important to highlight</p>
+                </div>
+
+                <p>More general information</p>
+
+
+                <!-- form group for radio/checkboxes -->
+                <div class="au-form-group">
+                  <fieldset class="au-fieldset">
+                      <legend class="au-fieldset__legend">
+                          <h3 class="au-display-sm">What type of aircraft?</h3>
+                          <span class="au-hint-text">This is some help text</span>
+                      </legend>
+
+                      <div class="au-control-input au-control-input--block">
+                          <input class="au-control-input__input" type="radio" name="assessed-simulator"
+                                     id="assessed-aircraft" value="select-review">
+                              <label class="au-control-input__text" for="assessed-aircraft">Aeroplane</label>
+                      </div>
+
+                      <div class="au-control-input au-control-input--block">
+                          <input class="au-control-input__input" type="radio" name="assessed-simulator"
+                                     id="assessed-simulator" value="select-review-sim">
+                              <label class="au-control-input__text" for="assessed-simulator">Helicopter</label>
+                      </div>
+
+
+
+                  </fieldset>
+                  </div>
+
+
+
+                  <!-- form group for text and other input -->
+                  <div class="au-form-group">
+                    <label class="au-label" for="name">Text input</label>
+                    <span class="au-hint-text">Please enter some text</span>
+                    <input type="text" class="au-text-input au-text-input--block" id="name"/>
+                 </div>
+
+
+
+                <!-- content ends here -->
+
+                <!-- declaration  button  -->
+
+                <div class="au-callout casa-declaration">
+                   		<h3>Declaration</h3>
+
+                      <p>I hereby certify that all statements in this application are true and correct in every particular and that I have read
+     and understood all regulatory references included in this application. I consent to CASA using and disclosing
+     my personal information in accordance with CASA’s privacy policy including exchanging the information with
+     Commonwealth, State and Territory government agencies (see CASA’s Privacy Policy ). I acknowledge that to knowingly make a false or
+     misleading statement is an offence against the Criminal Code Act 1995 (Cth).</p>
+  		                <p>
+            					<label class="au-control-input">
+            					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="declaration">
+            						<span class="au-control-input__text form-text p-t-0">
+            							I agree and understand the above conditions</span>
+            						</label>
+                      </p>
+              </div>
+
+
+
+
+
+                <!-- standard next button -->
+
+   				      <div class="au-form-group">
+   				           <a class="au-btn" href="success.html">Next</a>
+	              </div>
+
+
+                <!-- standard payment button
+
+                <div class="au-form-group">
+                    <a class="au-btn" href="payment.html">Proceed to payment</a>
+                    <p>You will be directed to Westpac for payment</p>
+                </div>
+                -->
+
+                <!-- save and continue
+                <div class="au-form-group">
+                  <hr />
+                  <a href="#" class="au-btn au-btn--secondary">
+                  Save and exit application
+                  </a>
+                </div>
+                -->
+
+            </div>
+			 </div>
+			 </div>
+		  </div>
+
+
+          <div class="footer">
+
+            <div class="footer-wrapper">
+               <iframe src="../mycasa-src/footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+            </div>
+         </div>
+      </main>
+   </body>
+</html>
