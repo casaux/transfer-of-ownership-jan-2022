@@ -13,6 +13,60 @@
       <script type="text/javascript" src="../mycasa-src-4.0/js/jquery.js"></script>
 	  <script type="text/javascript">
          /* page specific js */
+           $( document ).ready(function() {
+
+			  			  $(".operator-type").on('input', function() {
+
+				  if($("input:radio[name='radio-ex']:checked").val()=="no"){
+
+					  $("#no").css("display","block");
+
+
+				  } else {
+
+					  $("#no").css("display","none");
+
+				  }
+
+			  });
+
+			  $(".detail-info").on('input', function() {
+
+				  if($("input:radio[name='radio-ex1']:checked").val()=="success-dec"){
+
+					  $("#test").css("display","block");
+
+				  } else {
+
+					  $("#test").css("display","none");
+
+				  }
+
+			  });
+
+			  $(".owner-type").on('input', function() {
+
+				  if($("input:radio[name='radio-ex3']:checked").val()=="individual"){
+
+					  $("#individual").css("display","block");
+
+				  } else {
+
+					  $("#individual").css("display","none");
+
+				  }
+				  if($("input:radio[name='radio-ex3']:checked").val()=="organisation"){
+
+					  $("#organisation").css("display","block");
+
+				  } else {
+
+					  $("#organisation").css("display","none");
+
+				  }
+
+			  });
+               
 
 
       </script>
@@ -55,7 +109,7 @@
                <nav class="au-breadcrumbs" aria-label="breadcrumb">
                   <ul class="au-link-list au-link-list--inline">
                      <li><a href="#">myCASA</a></li>
-                    <li>Submission summary</li>
+                    <li>Transfer aircraft ownership</li>
                   </ul>
                </nav>
 
@@ -63,7 +117,7 @@
 
 			     <div class="au-form-group">
 			           <header class="au-header" role="banner">
-                  <h1 class="break desktop au-header-heading">Transfer Aircraft Ownership</h1>
+                  <h1 class="break desktop au-header-heading">Transfer aircraft ownership</h1>
                            <a class="au-direction-link" href="javascript:history.back()">
                             <span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
                             </a>
@@ -77,7 +131,7 @@
         <caption class="au-table__caption">Confirm details</caption>
         <thead class="au-table__head">
             <tr class="au-table__row">
-                <th scope="col" class="au-table__header au-table__header--width-50">Aircraft Details</th>
+                <th scope="col" class="au-table__header au-table__header--width-50">Aircraft details</th>
            
               
             </tr>
@@ -234,15 +288,16 @@
 				<br>
 			
 <div class="au-control-input au-control-input--block">
-  <input class="au-control-input__input" type="radio" name="radio-ex" id="male-radio-block">
-  <label class="au-control-input__text" for="male-radio-block">Yes</label>
+  <input class="au-control-input__input diff-ro" type="radio" name="radio-ex" id="correct" value="success-declaration">
+  <label class="au-control-input__text" for="correct">Yes</label>
 </div>
 <div class="au-control-input au-control-input--block">
-  <input class="au-control-input__input" type="radio" name="radio-ex" id="female-radio-block">
-  <label class="au-control-input__text" for="female-radio-block">No</label>
+  <input class="au-control-input__input diff-ro" type="radio" name="radio-ex" id="incorrect" value="bounce-back-dec-org">
+  <label class="au-control-input__text" for="incorrect">No</label>
 </div>
                 </div>	
 			
+                    <div id="registered-operator" style="display: none">
 					<div class="au-form-group">
 <label class="au-label">Will you be the registered operator of this aircraft?</label>
 
@@ -252,14 +307,59 @@
 				<br>
 			
 <div class="au-control-input au-control-input--block">
-  <input class="au-control-input__input" type="radio" name="radio-ex" id="male-radio-block">
+  <input class="au-control-input__input ro-confirm" type="radio" name="radio-ex-1" id="male-radio-block" value="yes-ro">
   <label class="au-control-input__text" for="male-radio-block">Yes</label>
 </div>
 <div class="au-control-input au-control-input--block">
-  <input class="au-control-input__input" type="radio" name="radio-ex" id="female-radio-block">
+  <input class="au-control-input__input ro-confirm" type="radio" name="radio-ex-1" id="female-radio-block" value="no-ro">
   <label class="au-control-input__text" for="female-radio-block">No</label>
 </div>
                 </div>	
+                    
+                    <div id="ind-or-org" style="display: none">
+                    <div class="au-form-group">
+                           <label class="au-label">Is the new registered operator an individual or Organisation?</label>
+                        </div>
+                        <div class="au-form-group">
+                           <div class="au-control-input au-control-input--block">
+                              <input class="au-control-input__input ro-type" type="radio" name="radio-ex-2" id="ind" value="individual">
+                              <label class="au-control-input__text" for="ind">Individual</label>
+                           </div>
+                           <div class="au-control-input au-control-input--block">
+                              <input class="au-control-input__input ro-type" type="radio" name="radio-ex-2" id="org" value="organisation">
+                              <label class="au-control-input__text" for="org">Organisation</label>
+                           </div>
+                        </div>
+                </div>
+                    <div class="col-lg-6">
+                    <div id="individual-questions" style="display: none">
+                        
+                        <div class="au-form-group">
+                           <label class="au-label" for="text-input-block">New registered operator family name</label>
+                           <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+                        </div>
+                        <div class="au-form-group">
+                           <label class="au-label" for="text-input-block">New registered operator ARN</label>
+                           <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+                        </div>
+                        </div>
+                         
+                         <div id="organisation-questions" style="display: none">
+                        <div class="au-form-group">
+                           <label class="au-label" for="text-input-block">New registered operator organisation name</label>
+                           <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+                        </div>
+                        <div class="au-form-group">
+                           <label class="au-label" for="text-input-block">New registered operator ARN</label>
+                           <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+                        </div>
+                            <div class="au-form-group">
+                           <label class="au-label" for="text-input-block">New registered operator ABN</label>
+                           <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+                        </div> 
+                        </div>
+                    </div>
+                </div>
 			
 			
  <div class="au-form-group">
@@ -268,9 +368,11 @@
                             <span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Return to myCASA
                             </a>
 				</div>
+                <div id="navigate" "navigate2">
 <div class="au-form-group">
-				<a class="au-btn" href="success-declaration.html">Next</a>
+				<a class="au-btn" href="#">Next</a>
                     </div>
+                </div>
 </div>
 
 
@@ -290,5 +392,59 @@
             </div>
          </div>
       </main>
+                 <script>
+                     $(".ro-confirm").on('input', function() {
+         
+         if($("input:radio[name='radio-ex-1']:checked").val()=="no-ro"){
+         
+         $("#ind-or-org").css("display","block");
+         } else {
+         
+         $("#ind-or-org").css("display","none");
+         
+         }
+         
+         });
+                     
+                     $(".ro-type").on('input', function() {
+         
+         if($("input:radio[name='radio-ex-2']:checked").val()=="individual"){
+         
+         $("#individual-questions").css("display","block");
+         $("#organisation-questions").css("display","none");
+         } else {
+         
+         $("#individual-questions").css("display","none");
+         $("#organisation-questions").css("display","block");
+         
+         }
+         
+         });
+                     
+                     $(".diff-ro").on('input', function() {
+         
+         if($("input:radio[name='radio-ex']:checked").val()=="success-declaration"){
+         
+         $("#registered-operator").css("display","block");
+         } else {
+         
+         $("#registered-operator").css("display","none");
+         
+         }
+         
+         });
+                     
+                     
+                 $("#navigate a"). click(function(){
+				var radioValue = $("input[name='radio-ex']:checked"). val();
+				if (radioValue == "success-declaration") {
+					var radioValuero = $("input[name='radio-ex-1']:checked"). val();
+					if (radioValuero == "no-ro"){
+						radioValue="different-ro-dec";
+					}
+				}
+				window.location.href=radioValue+".html";
+			 });
+                 </script>
    </body>
 </html>
